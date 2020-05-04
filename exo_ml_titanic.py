@@ -35,3 +35,6 @@ X_test_pret = preprocessing.transform(X_test)
 ###Get column names#
 categorical_pipe.fit(X_train[categorical_columns])
 categorical_name = categorical_pipe.steps[1][1].get_feature_names(categorical_columns)
+
+df_X_train_pret = pd.DataFrame(data = X_train_pret,  columns = cat_name.tolist() + numerical_columns)
+df_X_test_pret = pd.DataFrame(data = X_test_pret,  columns = cat_name.tolist() + numerical_columns)
